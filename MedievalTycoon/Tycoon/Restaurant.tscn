@@ -2,7 +2,8 @@
 
 [ext_resource type="MeshLibrary" uid="uid://bax4meu663dqw" path="res://mapmesh.tres" id="1_uajjq"]
 [ext_resource type="Script" uid="uid://cp35w6j6f4sv7" path="res://Scripts/player.gd" id="2_0ybh7"]
-[ext_resource type="PackedScene" uid="uid://d3ubafqihvncq" path="res://PlayerModel/Player_01.gltf" id="2_exkqr"]
+[ext_resource type="PackedScene" uid="uid://d3ubafqihvncq" path="res://Models/PlayerModel/Player_01.gltf" id="2_exkqr"]
+[ext_resource type="Script" uid="uid://c51xawbksyo8o" path="res://Scripts/npc_spawner.gd" id="4_8bwho"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_nw6nj"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -54,7 +55,7 @@ script = ExtResource("2_0ybh7")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1978955, 0)
 shape = SubResource("CapsuleShape3D_uajjq")
 
-[node name="PlayerModel" parent="Player" unique_id=1062884146 instance=ExtResource("2_exkqr")]
+[node name="PlayerModel" parent="Player" unique_id=483286372 instance=ExtResource("2_exkqr")]
 
 [node name="SouthWall" type="StaticBody3D" parent="." unique_id=1437023767]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.5, 8.5)
@@ -67,3 +68,8 @@ shape = SubResource("BoxShape3D_0ybh7")
 transform = Transform3D(-2.1855694e-08, 0, 0.5, 0, 0.5, 0, -0.5, 0, -2.1855694e-08, -10, 3, 0)
 pixel_size = 0.075
 text = "Door"
+
+[node name="NPCSpawner" type="Marker3D" parent="." unique_id=900588051]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 1, 0)
+gizmo_extents = 0.5
+script = ExtResource("4_8bwho")

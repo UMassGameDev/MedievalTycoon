@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://byjlcnon1j5j2"]
+
+[ext_resource type="PackedScene" uid="uid://cl7mhkpxmlcc5" path="res://Models/Farmer_02/Farmer_02.gltf" id="1_2yjmm"]
+[ext_resource type="Script" uid="uid://di8i2bycp0un4" path="res://Scripts/npc.gd" id="1_vavc2"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_uxtfp"]
+radius = 0.31103516
+height = 2.2371826
+
+[node name="Farmer_02" type="CharacterBody3D" unique_id=987448692]
+script = ExtResource("1_vavc2")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=955207784]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1208136, 0)
+shape = SubResource("CapsuleShape3D_uxtfp")
+
+[node name="Model" parent="." unique_id=1546618392 instance=ExtResource("1_2yjmm")]

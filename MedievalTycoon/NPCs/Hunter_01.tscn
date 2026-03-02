@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://bon38j7mlm8r8"]
+
+[ext_resource type="PackedScene" uid="uid://cmf3o1hu7ukp5" path="res://Models/Hunter_01/Hunter_01.gltf" id="1_6qlni"]
+[ext_resource type="Script" uid="uid://di8i2bycp0un4" path="res://Scripts/npc.gd" id="1_uxtfp"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_uxtfp"]
+radius = 0.31103516
+height = 2.2371826
+
+[node name="Hunter_01" type="CharacterBody3D" unique_id=211231540]
+script = ExtResource("1_uxtfp")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=597447462]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1208136, 0)
+shape = SubResource("CapsuleShape3D_uxtfp")
+
+[node name="Model" parent="." unique_id=944326928 instance=ExtResource("1_6qlni")]

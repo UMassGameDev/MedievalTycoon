@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://d33t8gbnlfr1d"]
+
+[ext_resource type="PackedScene" uid="uid://ca1sng0vscdbv" path="res://Models/Knight_01/Knight_01.gltf" id="1_qycno"]
+[ext_resource type="Script" uid="uid://di8i2bycp0un4" path="res://Scripts/npc.gd" id="1_xhfo0"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_xhfo0"]
+radius = 0.31103516
+height = 2.2371826
+
+[node name="Knight_01" type="CharacterBody3D" unique_id=125987585]
+script = ExtResource("1_xhfo0")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=260533003]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1208136, 0)
+shape = SubResource("CapsuleShape3D_xhfo0")
+
+[node name="Model" parent="." unique_id=999910953 instance=ExtResource("1_qycno")]
