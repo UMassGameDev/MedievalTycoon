@@ -8,7 +8,7 @@ var npc_scenes = [
 	load("res://NPCs/Knight_01.tscn")
 ]
 var spawned_npcs = []
-var max_npcs: int = 1
+var max_npcs: int = 2
 
 
 # Called when the node enters the scene tree for the first time.
