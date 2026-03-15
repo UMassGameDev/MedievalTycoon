@@ -36,8 +36,10 @@ public class NodeBase {
 			}
 		}
 		else {
-			// Walkable if the tile is empty
-			this.walkable = gridMap.GetCellItem(new Vector3I(coords.X, 1, coords.Y)) == -1;
+			int tileItem = gridMap.GetCellItem(new Vector3I(coords.X, 0, coords.Y));
+			
+			// Walkable only if the tile ID is not 1 or 2
+			this.walkable = tileItem != 1 && tileItem != 2;
 		}
 	}
 	
@@ -58,9 +60,10 @@ public class NodeBase {
 					nodeCache[neighborCoords] = neighbor;
 				}
 				
-				// Add extra walkable check (skip diagonals if blocked)
+				// Add extra walkable check (skip diagonals if blocked (1 or 2 means blocked))
 				if (neighbor.walkable && rx != 0 && ry != 0) {
-					if (gridMap.GetCellItem(new Vector3I(coords.X + rx, 1, coords.Y)) != -1 || gridMap.GetCellItem(new Vector3I(coords.X, 1, coords.Y + ry)) != -1) {
+					if (gridMap.GetCellItem(new Vector3I(coords.X + rx, 0, coords.Y)) == 1 || gridMap.GetCellItem(new Vector3I(coords.X, 0, coords.Y + ry)) == 1
+					 || gridMap.GetCellItem(new Vector3I(coords.X + rx, 0, coords.Y)) == 2 || gridMap.GetCellItem(new Vector3I(coords.X, 0, coords.Y + ry)) == 2) {
 						continue;
 					}
 				}
