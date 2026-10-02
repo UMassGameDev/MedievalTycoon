@@ -20,6 +20,13 @@ ambient_light_source = 2
 ambient_light_color = Color(1, 1, 1, 1)
 ambient_light_energy = 0.75
 tonemap_mode = 2
+ssao_enabled = true
+ssao_radius = 4.28
+ssao_intensity = 4.41
+ssao_power = 0.445
+ssao_detail = 5.0
+ssao_horizon = 0.0
+ssao_sharpness = 1.0
 glow_enabled = true
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_uajjq"]
