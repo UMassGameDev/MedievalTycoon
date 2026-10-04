@@ -1,9 +1,11 @@
-extends CharacterBody3D
+# GridMap layer -1 is the pathfinding layer
 
+extends CharacterBody3D
 
 # NODES
 @onready var model: Node3D = $Model
 @onready var grid_map: GridMap = get_node("/root/Node3D/GridMap")
+@onready var furniture_grid: GridMap = get_node("/root/Node3D/FurnitureGrid")
 @onready var pathfinder = get_node("/root/Node3D/Pathfinder")
 @onready var npc_spawner = get_node("/root/Node3D/NPCSpawner")
 
@@ -26,7 +28,7 @@ func _find_chair():
 	var chair_candidates: Array = [];
 	for z in range(-5, 5):
 		for x in range(-6, 6):
-			if grid_map.get_cell_item(Vector3i(x, 0, z)) == 0:
+			if grid_map.get_cell_item(Vector3i(x, -1, z)) == 0:
 				chair_candidates.append([x, z])
 	
 	if len(chair_candidates) > 0:
@@ -58,8 +60,15 @@ func _update_movement(delta: float):
 		elif !target_reached:
 			# Target has been reached
 			target_reached = true
+			# Align NPC with chair (it currently is too snappy)
+			global_position = Vector3((target_pos.x + 0.5) * 1.6, model.global_position.y, (target_pos.y + 0.5) * 1.6)
+			var orientation: int = furniture_grid.get_cell_item_orientation(Vector3i(target_pos.x, 0, target_pos.y))
+			if orientation == 0:
+				model.rotation.y = PI / 2
+			elif orientation == 10:
+				model.rotation.y = 3 * PI / 2
 			# Fill chair
-			grid_map.set_cell_item(Vector3i(target_pos[0], 0, target_pos[1]), 2, 0)
+			grid_map.set_cell_item(Vector3i(target_pos[0], -1, target_pos[1]), 2, 0)
 			# Spawn new NPC
 			npc_spawner.max_npcs += 1
 	

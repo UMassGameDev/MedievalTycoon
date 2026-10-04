@@ -1,5 +1,5 @@
 // Call the FindPath function to calculate a path
-// using A* on y layer 1 of the GridMap where -1 is an empty cell.
+// using A* on y layer -1 of the GridMap where -1 is an empty cell.
 // Followed: https://www.youtube.com/watch?v=i0x5fj4PqP4
 // The current implementation does not seem to work on an infinite grid.
 
@@ -36,7 +36,7 @@ public class NodeBase {
 			}
 		}
 		else {
-			int tileItem = gridMap.GetCellItem(new Vector3I(coords.X, 0, coords.Y));
+			int tileItem = gridMap.GetCellItem(new Vector3I(coords.X, -1, coords.Y));
 			
 			// Walkable only if the tile ID is not 1 or 2
 			this.walkable = tileItem != 1 && tileItem != 2;
@@ -62,8 +62,8 @@ public class NodeBase {
 				
 				// Add extra walkable check (skip diagonals if blocked (1 or 2 means blocked))
 				if (neighbor.walkable && rx != 0 && ry != 0) {
-					if (gridMap.GetCellItem(new Vector3I(coords.X + rx, 0, coords.Y)) == 1 || gridMap.GetCellItem(new Vector3I(coords.X, 0, coords.Y + ry)) == 1
-					 || gridMap.GetCellItem(new Vector3I(coords.X + rx, 0, coords.Y)) == 2 || gridMap.GetCellItem(new Vector3I(coords.X, 0, coords.Y + ry)) == 2) {
+					if (gridMap.GetCellItem(new Vector3I(coords.X + rx, -1, coords.Y)) == 1 || gridMap.GetCellItem(new Vector3I(coords.X, -1, coords.Y + ry)) == 1
+					 || gridMap.GetCellItem(new Vector3I(coords.X + rx, -1, coords.Y)) == 2 || gridMap.GetCellItem(new Vector3I(coords.X, -1, coords.Y + ry)) == 2) {
 						continue;
 					}
 				}
