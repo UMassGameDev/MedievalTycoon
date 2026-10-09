@@ -47,7 +47,7 @@ _subresources={
 "generate/shadow_meshes": 0,
 "lods/normal_merge_angle": 20.0,
 "save_to_file/enabled": true,
-"save_to_file/fallback_path": "res://Models/Furniture/Table and Chair/Chair.res",
+"save_to_file/fallback_path": "res://Models/Furniture/Table and Chair/Chair_01.res",
 "save_to_file/path": "uid://bvtvulm1h74v7"
 },
 "blockbench_export_mesh2": {
@@ -56,7 +56,7 @@ _subresources={
 "generate/shadow_meshes": 0,
 "lods/normal_merge_angle": 20.0,
 "save_to_file/enabled": true,
-"save_to_file/fallback_path": "res://Models/Furniture/Table.res",
+"save_to_file/fallback_path": "res://Models/Furniture/Table and Chair/Table_02.res",
 "save_to_file/path": "uid://b188gv7fhlr6n"
 }
 }

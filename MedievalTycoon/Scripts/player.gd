@@ -5,6 +5,9 @@ extends CharacterBody3D
 @onready var model: Node3D = $PlayerModel
 @onready var grid_map: GridMap = get_node("/root/Node3D/GridMap")
 
+# EXPORT VARIABLES
+@export var isCarryingFood := false #If the player is holding food
+
 # CONSTANTS
 const SPEED = 5.0
 
@@ -49,5 +52,6 @@ func _update_movement(delta: float):
 	move_and_slide()
 
 func _physics_process(delta: float) -> void:
+	print(isCarryingFood)
 	_handle_place_input()
 	_update_movement(delta)

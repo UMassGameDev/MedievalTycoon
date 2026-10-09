@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://d3ubafqihvncq" path="res://Models/PlayerModel/Player_01.gltf" id="2_exkqr"]
 [ext_resource type="Script" uid="uid://c51xawbksyo8o" path="res://Scripts/npc_spawner.gd" id="4_8bwho"]
 [ext_resource type="Script" uid="uid://dqk8omculbu14" path="res://Scripts/Pathfinder.cs" id="5_8bwho"]
+[ext_resource type="PackedScene" uid="uid://dqo2votokh4oe" path="res://Objects/CookingPot/CookingPot.tscn" id="6_is03y"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_nw6nj"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -1157,11 +1158,6 @@ transform = Transform3D(-2.1855694e-08, 0, 0.5, 0, 0.5, 0, -0.5, 0, -2.1855694e-
 pixel_size = 0.075
 text = "Door"
 
-[node name="DoorPlaceholderText2" type="Label3D" parent="." unique_id=1970634536]
-transform = Transform3D(0.19999999, 0, 0, 0, -2.1855694e-08, 0.5, 0, -0.5, -2.1855694e-08, 5.5964527, 2, 10.300144)
-pixel_size = 0.075
-text = "Cook!1!"
-
 [node name="NPCSpawner" type="Marker3D" parent="." unique_id=900588051]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 1, 0)
 gizmo_extents = 0.5
@@ -1169,3 +1165,6 @@ script = ExtResource("4_8bwho")
 
 [node name="Pathfinder" type="Node3D" parent="." unique_id=1349499691]
 script = ExtResource("5_8bwho")
+
+[node name="Area3D" parent="." unique_id=160489892 instance=ExtResource("6_is03y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.5, 1, 10.5)

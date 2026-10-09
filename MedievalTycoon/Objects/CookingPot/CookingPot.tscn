@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://dqo2votokh4oe"]
+
+[ext_resource type="Script" uid="uid://3anrl2keum8q" path="res://Objects/CookingPot/cooking_pot.gd" id="1_rlds5"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_41nc8"]
+size = Vector3(4, 1, 4)
+
+[sub_resource type="BoxMesh" id="BoxMesh_tgvrn"]
+size = Vector3(2, 1, 2)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ip212"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_oiwof"]
+size = Vector3(2, 1, 2)
+
+[node name="CookingPot" type="Area3D" unique_id=160489892]
+script = ExtResource("1_rlds5")
+
+[node name="Hitbox" type="CollisionShape3D" parent="." unique_id=498427186]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("BoxShape3D_41nc8")
+
+[node name="DoorPlaceholderText2" type="Label3D" parent="." unique_id=2043198897]
+transform = Transform3D(0.19999999, 0, 0, 0, -2.1855694e-08, 0.5, 0, -0.5, -2.1855694e-08, 0, 2, 0)
+pixel_size = 0.075
+text = "Cook!1!"
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=888545889]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+mesh = SubResource("BoxMesh_tgvrn")
+surface_material_override/0 = SubResource("StandardMaterial3D_ip212")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1443926641]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=420152044]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("BoxShape3D_oiwof")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
