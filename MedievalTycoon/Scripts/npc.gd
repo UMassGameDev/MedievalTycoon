@@ -18,6 +18,11 @@ var target_pos = Vector2i(0, 0); # Default target position used when no empty ch
 var last_updated_time = 0;
 var target_reached: bool = false;
 
+# VARIABLES: Interacting With Player
+var is_fed: bool = false; #If they had food or not. They wont' take food if they're already fed.
+# FIXME: We need an Area3D for all NPCs i believe.
+# This is so we can program the player running into an NPC.
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	_find_chair()
