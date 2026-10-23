@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://b0k6bkdr8e4en"]
+
+[ext_resource type="Script" uid="uid://di57h3sedyn1s" path="res://NPCs/npc_interaction.gd" id="1_guuhs"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_uxtfp"]
+radius = 0.31103516
+height = 2.2371826
+
+[node name="NPC_Interaction_Hitbox" type="Area3D" unique_id=242297303]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+script = ExtResource("1_guuhs")
+
+[node name="InteractionCollision" type="CollisionShape3D" parent="." unique_id=1231364699]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 1.1208136, 0)
+shape = SubResource("CapsuleShape3D_uxtfp")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

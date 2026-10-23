@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://cmf3o1hu7ukp5" path="res://Models/Hunter_01/Hunter_01.gltf" id="1_6qlni"]
 [ext_resource type="Script" uid="uid://di8i2bycp0un4" path="res://Scripts/npc.gd" id="1_uxtfp"]
+[ext_resource type="PackedScene" uid="uid://b0k6bkdr8e4en" path="res://NPCs/NPC_Interaction_Hitbox.tscn" id="3_veka6"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_uxtfp"]
 radius = 0.31103516
@@ -15,3 +16,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1208136, 0)
 shape = SubResource("CapsuleShape3D_uxtfp")
 
 [node name="Model" parent="." unique_id=944326928 instance=ExtResource("1_6qlni")]
+
+[node name="NPC_Interaction_Hitbox" parent="." unique_id=242297303 instance=ExtResource("3_veka6")]

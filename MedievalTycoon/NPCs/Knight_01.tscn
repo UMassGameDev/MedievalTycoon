@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://ca1sng0vscdbv" path="res://Models/Knight_01/Knight_01.gltf" id="1_qycno"]
 [ext_resource type="Script" uid="uid://di8i2bycp0un4" path="res://Scripts/npc.gd" id="1_xhfo0"]
+[ext_resource type="PackedScene" uid="uid://b0k6bkdr8e4en" path="res://NPCs/NPC_Interaction_Hitbox.tscn" id="3_2x862"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_xhfo0"]
 radius = 0.31103516
@@ -15,3 +16,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1208136, 0)
 shape = SubResource("CapsuleShape3D_xhfo0")
 
 [node name="Model" parent="." unique_id=999910953 instance=ExtResource("1_qycno")]
+
+[node name="NPC_Interaction_Hitbox" parent="." unique_id=242297303 instance=ExtResource("3_2x862")]
