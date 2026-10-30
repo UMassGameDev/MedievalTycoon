@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://c4tmms30juvum"]
+
+[ext_resource type="PackedScene" uid="uid://inyphir84xij" path="res://Models/Furniture/CookingPot/Cauldron.glb" id="1_j31r5"]
+
+[node name="blockbench_export" unique_id=1108332696 instance=ExtResource("1_j31r5")]
+
+[node name="group5" parent="." index="0" unique_id=2109434340]
+transform = Transform3D(-0.9942685, 0, -0.10691189, 0, 1, 0, 0.10691189, 0, -0.9942685, 0, 2.125, 0)
+
+[node name="group3" parent="group5" index="0" unique_id=1727331903]
+transform = Transform3D(0.9537172, -0.30070484, -1.0170043e-06, 0.27781525, 0.8811194, 0.38268435, -0.11507413, -0.36497295, 0.92387915, -0.0625, -0.40625, 0.25)
+
+[node name="group2" parent="group" parent_id_path=PackedInt32Array(151859139) index="0" unique_id=1960254927]
+transform = Transform3D(0.34229794, 0, -0.93959147, 0, 1, 0, 0.93959147, 0, 0.34229794, 0, 0, 0)
+
+[node name="AnimationPlayer" parent="." index="3" unique_id=70963963]
+autoplay = &"Stir_Full"

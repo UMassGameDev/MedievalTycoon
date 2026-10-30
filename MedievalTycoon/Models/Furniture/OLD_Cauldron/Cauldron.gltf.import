@@ -4,12 +4,12 @@ importer="ArrayMesh"
 importer_version=1
 type="ArrayMesh"
 uid="uid://by58w1emhwp5u"
-path="res://.godot/imported/Cauldron.gltf-db2dcf1fd98348b56dada9d0aa5f31a8.res"
+path="res://.godot/imported/Cauldron.gltf-b51fa169e99b0a85d8a0d8fcf9a21bcf.res"
 
 [deps]
 
-source_file="res://Models/Furniture/Cauldron/Cauldron.gltf"
-dest_files=["res://.godot/imported/Cauldron.gltf-db2dcf1fd98348b56dada9d0aa5f31a8.res"]
+source_file="res://Models/Furniture/OLD_Cauldron/Cauldron.gltf"
+dest_files=["res://.godot/imported/Cauldron.gltf-b51fa169e99b0a85d8a0d8fcf9a21bcf.res"]
 
 [params]
 

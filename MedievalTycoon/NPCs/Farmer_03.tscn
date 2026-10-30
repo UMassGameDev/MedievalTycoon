@@ -18,4 +18,3 @@ shape = SubResource("CapsuleShape3D_uxtfp")
 [node name="Model" parent="." unique_id=1421134774 instance=ExtResource("1_57iir")]
 
 [node name="NPC_Interaction_Hitbox" parent="." unique_id=242297303 instance=ExtResource("3_a10mu")]
-script = null

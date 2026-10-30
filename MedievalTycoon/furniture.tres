@@ -3,7 +3,7 @@
 [ext_resource type="ArrayMesh" uid="uid://bvtvulm1h74v7" path="res://Models/Furniture/Table and Chair/Chair_01.res" id="1_80ohx"]
 [ext_resource type="ArrayMesh" uid="uid://b188gv7fhlr6n" path="res://Models/Furniture/Table and Chair/Table_02.res" id="2_2qmue"]
 [ext_resource type="ArrayMesh" uid="uid://cxe13ky1xsene" path="res://Models/Furniture/Table/Table_01.res" id="3_2qmue"]
-[ext_resource type="ArrayMesh" uid="uid://by58w1emhwp5u" path="res://Models/Furniture/Cauldron/Cauldron.gltf" id="4_y1bos"]
+[ext_resource type="ArrayMesh" uid="uid://by58w1emhwp5u" path="res://Models/Furniture/OLD_Cauldron/Cauldron.gltf" id="4_y1bos"]
 
 [resource]
 item/14/name = "Chair_01"

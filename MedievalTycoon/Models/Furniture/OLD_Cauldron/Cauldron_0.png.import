@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c8fm8txvsilxr"
-path.s3tc="res://.godot/imported/Cauldron_1.png-d065f258ec2b8006c71ba5612cd2779d.s3tc.ctex"
+uid="uid://byyyoni7sj17q"
+path.s3tc="res://.godot/imported/Cauldron_0.png-cf42b65d3e1377878fc47f3efc8879f0.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "0fdefe9098d929ef356fec43fb80c697"
+"md5": "66c7643413b0b1fa215fb9860060af01"
 }
 
 [deps]
 
-source_file="res://Models/Furniture/Cauldron/Cauldron_1.png"
-dest_files=["res://.godot/imported/Cauldron_1.png-d065f258ec2b8006c71ba5612cd2779d.s3tc.ctex"]
+source_file="res://Models/Furniture/OLD_Cauldron/Cauldron_0.png"
+dest_files=["res://.godot/imported/Cauldron_0.png-cf42b65d3e1377878fc47f3efc8879f0.s3tc.ctex"]
 
 [params]
 
