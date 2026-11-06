@@ -8,6 +8,14 @@ extends CharacterBody3D
 # EXPORT VARIABLES
 @export var isCarryingFood := false #If the player is holding food
 
+# State (mainly used for animations)
+@export_group("State")
+@export var state = "idle"
+
+#Animation variables
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
+var last_anim_played := "" #Stores the last played animation that isn't empty so that non-looping animations don't loop
+
 # CONSTANTS
 const SPEED = 5.0
 
@@ -55,3 +63,20 @@ func _physics_process(delta: float) -> void:
 	print(isCarryingFood)
 	_handle_place_input()
 	_update_movement(delta)
+
+
+## Animation stuff
+# Plays an animation based on the current state of the player
+func _animation_controller() -> void:
+	
+	#Gets the animation that's being played right now
+	if animation_player.current_animation != "": #If the animation isn't empty / if the animation didn't end
+		last_anim_played = animation_player.current_animation #Update the animation to the current animation that's playing
+	
+	#IDLE ANIM
+	if state == "idle":
+		animation_player.play("UNFINISHEDAnimLibrary/IdleAnim")
+	
+	#WALKING ANIM	#TODO: FINISH
+	elif state == "walking" and not (last_anim_played == "UNFINISHEDAnimLibrary/WalkAnim"):
+		animation_player.play("UNFINISHEDAnimLibrary/WalkAnim")

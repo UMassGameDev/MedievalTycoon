@@ -1146,6 +1146,8 @@ shape = SubResource("CapsuleShape3D_uajjq")
 
 [node name="PlayerModel" parent="Player" unique_id=483286372 instance=ExtResource("2_exkqr")]
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Player" unique_id=14504400]
+
 [node name="SouthWall" type="StaticBody3D" parent="." unique_id=1437023767]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.5, 8.5)
 
