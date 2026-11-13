@@ -48,21 +48,25 @@ func _update_movement(delta: float):
 	var input_dir := Input.get_vector("Left", "Right", "Up", "Down")
 	var direction := (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	if direction:
+		state = "walking"
 		velocity.x = direction.x * SPEED
 		velocity.z = direction.z * SPEED
 		# Rotate player
 		var target_rotation_y = atan2(input_dir.x, input_dir.y)
 		model.rotation.y = lerp_angle(model.rotation.y, target_rotation_y, delta * 25.0)
 	else:
+		state = "idle"
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.z = move_toward(velocity.z, 0, SPEED)
 
 	move_and_slide()
 
 func _physics_process(delta: float) -> void:
-	print(isCarryingFood)
+	print(state)
+	#print(isCarryingFood)
 	_handle_place_input()
 	_update_movement(delta)
+	_animation_controller()
 
 
 ## Animation stuff
@@ -75,8 +79,8 @@ func _animation_controller() -> void:
 	
 	#IDLE ANIM
 	if state == "idle":
-		animation_player.play("UNFINISHEDAnimLibrary/IdleAnim")
+		animation_player.play("PlayerAnimLibrary/Idle01")
 	
 	#WALKING ANIM	#TODO: FINISH
-	elif state == "walking" and not (last_anim_played == "UNFINISHEDAnimLibrary/WalkAnim"):
-		animation_player.play("UNFINISHEDAnimLibrary/WalkAnim")
+	elif state == "walking" and not (last_anim_played == "PlayerAnimLibrary/Run01"):
+		animation_player.play("PlayerAnimLibrary/Run01")
