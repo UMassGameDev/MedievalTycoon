@@ -78,9 +78,17 @@ func _animation_controller() -> void:
 		last_anim_played = animation_player.current_animation #Update the animation to the current animation that's playing
 	
 	#IDLE ANIM
-	if state == "idle":
+	if state == "idle" and not isCarryingFood:
 		animation_player.play("PlayerAnimLibrary/Idle01")
+
+	#IDLE ANIM / FOOD
+	if state == "idle" and isCarryingFood:
+		animation_player.play("PlayerAnimLibrary/Sit01")
 	
-	#WALKING ANIM	#TODO: FINISH
-	elif state == "walking" and not (last_anim_played == "PlayerAnimLibrary/Run01"):
+	#WALKING ANIM
+	elif state == "walking" and not isCarryingFood and not (last_anim_played == "PlayerAnimLibrary/Run01"):
 		animation_player.play("PlayerAnimLibrary/Run01")
+	
+	#WALKING ANIM W/ FOOD
+	elif state == "walking" and isCarryingFood and not (last_anim_played == "PlayerAnimLibrary/Run02"):
+		animation_player.play("PlayerAnimLibrary/Run02")
